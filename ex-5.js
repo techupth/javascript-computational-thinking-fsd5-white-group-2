@@ -82,3 +82,15 @@ let orders = [
 ];
 
 // Start coding here
+let productId;
+let sumAmount = 0;
+for (let i = 0; i < orders.length; i++) {
+  if (sumAmount < orders[i].productPrice * orders[i].productQuantity) {
+    sumAmount = orders[i].productPrice * orders[i].productQuantity;
+    productId = orders[i].id;
+  }
+}
+
+console.log(
+  `The most expensive order is order id ${productId} (${sumAmount.toLocaleString()} Bath)`
+);
